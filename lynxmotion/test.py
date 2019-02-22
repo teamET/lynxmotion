@@ -1,4 +1,4 @@
 import al5d
 
-a = al5d.AL5D('/dev/ttyUSB0')
+a = al5d.AL5D('COM5')
 a.init()

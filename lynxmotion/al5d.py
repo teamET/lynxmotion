@@ -111,8 +111,8 @@ class AL5D(object):
 
         angle: the angle to rotate to [-pi/4, pi/4], positive angles are counter-clockwise 
         when viewed from the top of the servo. 0 is pointing straight up"""
-        assert -math.pi / 4 <= angle <= math.pi / 4, angle
-        percent = angle / (math.pi / 4)
+    #    assert -math.pi / 4 <= angle <= math.pi / 4, angle
+        percent = angle / (math.pi/2)
         self.ssc32.move(SHOULDER, int(1500 - 400*percent), speed, time)
 
     def elbow(self, angle, speed=100, time=None):
@@ -120,7 +120,7 @@ class AL5D(object):
 
         angle: the angle to rotate to [0, 7pi/8], positive angles are counter-clockwise 
         when viewed from the top of the servo. 0 has the arm fully extended"""
-        assert 0 <= angle <= math.pi * 7.0 / 8.0, angle
+#        assert 0 <= angle <= math.pi * 7.0 / 8.0, angle
         percent = angle / math.pi
         self.ssc32.move(ELBOW, int(660 + 1560*percent), speed, time)
 
